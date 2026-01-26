@@ -3248,6 +3248,18 @@ img.u-pull-left {
     color            : black;
 }
 
+.s-intro__more .s-intro__more-btn:nth-of-type(2) {
+    background-color : white !important;
+    border           : 2px solid white !important;
+    color            : black !important;
+}
+
+.s-intro__more .s-intro__more-btn:nth-of-type(2):hover {
+    background-color : white !important;
+    border           : 2px solid white !important;
+    color            : black !important;
+}
+
 /* --------------------------------------------------------------------
  * ## intro social
  * -------------------------------------------------------------------- */
@@ -3447,6 +3459,51 @@ img.u-pull-left {
     color : var(--color-2);
 }
 
+.s-about__stats {
+    margin-top : var(--vspace-4);
+}
+
+.stats-list {
+    display : grid;
+    grid-template-columns : repeat(3, 1fr);
+    gap : var(--vspace-2);
+    list-style : none;
+    margin : 0;
+    padding : 0;
+}
+
+.stat-item {
+    text-align : center;
+    padding : var(--vspace-2);
+    border-radius : 8px;
+    background-color : #f8f9fa;
+    transition : all 0.3s ease;
+}
+
+.stat-item:hover {
+    background-color : #f0f1f3;
+    transform : translateY(-5px);
+    box-shadow : 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size : 4.8rem;
+    font-weight : 700;
+    color : var(--color-2);
+    line-height : 1;
+    margin-bottom : var(--vspace-0_5);
+    letter-spacing : -0.02em;
+}
+
+.stat-label {
+    font-size : 1.4rem;
+    font-weight : 600;
+    color : var(--color-text);
+    line-height : 1.6;
+    text-transform : uppercase;
+    letter-spacing : 0.08em;
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * about
@@ -3469,6 +3526,10 @@ img.u-pull-left {
     .s-about__content {
         max-width : 800px;
     }
+
+    .stat-number {
+        font-size : 3.8rem;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -3486,6 +3547,19 @@ img.u-pull-left {
 @media screen and (max-width: 600px) {
     .s-about {
         --text-multiplier : 0.6;
+    }
+
+    .stats-list {
+        grid-template-columns : 1fr;
+        gap : var(--vspace-1_5);
+    }
+
+    .stat-number {
+        font-size : 3.2rem;
+    }
+
+    .stat-label {
+        font-size : 1.2rem;
     }
 }
 
@@ -3904,11 +3978,8 @@ img.u-pull-left {
 
 .clients__slide img {
     margin     : 0;
-    max-height : 64px;
-    width      : auto;
     opacity    : .4;
     transform  : scale(0.85);
-    filter     : grayscale(1);
     transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -3916,17 +3987,6 @@ img.u-pull-left {
 .clients__slide:hover img {
     transform : scale(1);
     opacity   : 1;
-    filter    : grayscale(1) brightness(0.95);
-}
-
-/* slightly darken white-on-transparent logos so they read on light bg */
-.clients__slide img[data-logo="darken"] {
-    filter : grayscale(1) brightness(0.25) contrast(3);
-}
-
-.clients__slide:focus img[data-logo="darken"],
-.clients__slide:hover img[data-logo="darken"] {
-    filter : grayscale(1) brightness(0.35) contrast(3);
 }
 
 /* ------------------------------------------------------------------- 
