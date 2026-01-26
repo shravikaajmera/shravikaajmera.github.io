@@ -3904,8 +3904,11 @@ img.u-pull-left {
 
 .clients__slide img {
     margin     : 0;
+    max-height : 64px;
+    width      : auto;
     opacity    : .4;
     transform  : scale(0.85);
+    filter     : grayscale(1);
     transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -3913,6 +3916,17 @@ img.u-pull-left {
 .clients__slide:hover img {
     transform : scale(1);
     opacity   : 1;
+    filter    : grayscale(1) brightness(0.95);
+}
+
+/* slightly darken white-on-transparent logos so they read on light bg */
+.clients__slide img[data-logo="darken"] {
+    filter : grayscale(1) brightness(0.25) contrast(3);
+}
+
+.clients__slide:focus img[data-logo="darken"],
+.clients__slide:hover img[data-logo="darken"] {
+    filter : grayscale(1) brightness(0.35) contrast(3);
 }
 
 /* ------------------------------------------------------------------- 
