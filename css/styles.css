@@ -4411,3 +4411,28 @@ img.u-pull-left {
         display : none;
     }
 }
+
+/* -------------------------------------------------------------------
+ * Clients logo grayscale overrides (final cascade)
+ * Ensures consistent greyscale + contrast regardless of prior rules
+ * ------------------------------------------------------------------- */
+.clients-block .clients .clients__slide img {
+    filter : grayscale(100%) brightness(0.92) !important;
+    max-height : 64px;
+    width      : auto;
+}
+
+.clients-block .clients .clients__slide:hover img,
+.clients-block .clients .clients__slide:focus img {
+    filter : grayscale(100%) brightness(1) !important;
+}
+
+/* Darken white-on-transparent marks (e.g., 8club, Vaaniai) */
+.clients-block .clients .clients__slide img[data-logo="darken"] {
+    filter : grayscale(100%) brightness(0.35) contrast(2.6) !important;
+}
+
+.clients-block .clients .clients__slide:hover img[data-logo="darken"],
+.clients-block .clients .clients__slide:focus img[data-logo="darken"] {
+    filter : grayscale(100%) brightness(0.5) contrast(2.6) !important;
+}
