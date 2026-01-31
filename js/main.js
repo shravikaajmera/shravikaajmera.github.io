@@ -210,8 +210,8 @@
 
         const clientsSwiper = new Swiper('.clients', {
 
-            slidesPerView: 3,
-            spaceBetween: 6,
+            slidesPerView: 2,
+            spaceBetween: 20,
             slideClass: 'clients__slide',
             pagination: {
                 el: '.swiper-pagination',
